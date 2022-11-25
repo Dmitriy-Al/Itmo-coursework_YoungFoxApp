@@ -34,14 +34,14 @@ public class Game {
         System.out.println("\n<Игра сохранена>\n");
     }
 
-    public void loadedSavedGame() {
+    public void loadSavedGame() {
         try (
                 FileInputStream fileInputStream = new FileInputStream(saveFolder);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         ) {
             gameStarter.setParagraph((Paragraph) objectInputStream.readObject());
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Err");
+            System.out.println("Ошибка загрузки сохраненной игры!");
         }
         gameStarter.startGameProcess();
     }

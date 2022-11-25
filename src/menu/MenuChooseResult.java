@@ -15,7 +15,7 @@ public class MenuChooseResult {
 
     public void loadGame() {
         game = new Game();
-        game.loadedSavedGame();
+        game.loadSavedGame();
     }
 
     public void saveGame() {
